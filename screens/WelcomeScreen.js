@@ -4,12 +4,17 @@ import {
     Text,
 } from 'react-native';
 
+import Slides from '../components/Slides';
+
+const SLIDE_DATA = [
+    { text: 'Welcome to JobApp' },
+    { text: 'Set your location, then swipe away' },
+];
+
 class WelcomeScreen extends React.Component {
     render() {
         return (
-            <View>
-                <Text>WelcomeScreen</Text>
-            </View>
+            <Slides data={SLIDE_DATA} />
         );
     }
 }
