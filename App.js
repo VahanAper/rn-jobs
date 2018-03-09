@@ -25,8 +25,12 @@ const MainNavigator = TabNavigator({
                     settings: { screen: SettingsScreen },
                 }),
             },
+        }, {
+            tabBarPosition: 'bottom',
         }),
     },
+}, {
+    tabBarPosition: 'bottom',
 });
 
 class App extends React.Component {

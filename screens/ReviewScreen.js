@@ -2,6 +2,7 @@ import React from 'react';
 import {
     View,
     Text,
+    Platform,
 } from 'react-native';
 import { Button } from 'react-native-elements';
 
@@ -11,11 +12,16 @@ class ReviewScreen extends React.Component {
         headerRight: (
             <Button
                 title="Settings"
-                color="rgba(0, 122, 25 5, 1)"
+                textStyle={{
+                    color: "rgba(0, 122, 255, 1)"
+                }}
                 backgroundColor="rgba(0, 0, 0, 0)"
                 onPress={() => navigation.navigate('settings')}
             />
         ),
+        headerStyle: {
+            
+        }
     });
     
     render() {
