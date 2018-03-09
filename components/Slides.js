@@ -18,6 +18,8 @@ class Slides extends React.Component {
                 <Button
                     raised
                     title="Onwards!"
+                    onPress={this.props.onComplete}
+                    buttonStyle={styles.buttonStyle}
                 />
             );
         }
@@ -34,7 +36,9 @@ class Slides extends React.Component {
                     ]}
                 >
                     <Text style={styles.textStyle}>{slide.text}</Text>
+                    
                     {this.renderLastSlide(index)}
+                    
                 </View>
             );
         });
@@ -57,6 +61,7 @@ const styles = {
     textStyle: {
         fontSize: 30,
         color: 'white',
+        marginBottom: 15,
     },
     slideStyle: {
         flex: 1,
@@ -64,6 +69,9 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
     },
+    buttonStyle: {
+        backgroundColor: '#0288D1',
+    }
 };
 
 export default Slides;
