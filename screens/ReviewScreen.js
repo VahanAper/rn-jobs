@@ -19,9 +19,6 @@ class ReviewScreen extends React.Component {
                 onPress={() => navigation.navigate('settings')}
             />
         ),
-        headerStyle: {
-            
-        }
     });
     
     render() {
