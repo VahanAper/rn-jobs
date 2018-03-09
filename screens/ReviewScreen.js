@@ -11,6 +11,8 @@ class ReviewScreen extends React.Component {
         headerRight: (
             <Button
                 title="Settings"
+                color="rgba(0, 122, 25 5, 1)"
+                backgroundColor="rgba(0, 0, 0, 0)"
                 onPress={() => navigation.navigate('settings')}
             />
         ),
