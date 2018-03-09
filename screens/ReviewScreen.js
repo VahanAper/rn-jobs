@@ -3,14 +3,18 @@ import {
     View,
     Text,
 } from 'react-native';
+import { Button } from 'react-native-elements';
 
 class ReviewScreen extends React.Component {
-    static navigationOptions = {
-        title: 'Review Jobs',
+    static navigationOptions = ({ navigation }) => ({
+        headerTitle: 'Review Jobs',
         headerRight: (
-            <Text>Go right</Text>
+            <Button
+                title="Settings"
+                onPress={() => navigation.navigate('settings')}
+            />
         ),
-    }
+    });
     
     render() {
         return (
