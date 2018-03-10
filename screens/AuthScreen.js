@@ -3,6 +3,7 @@ import {
     View,
     Text,
     AsyncStorage,
+    ActivityIndicator,
 } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -13,7 +14,7 @@ class AuthScreen extends React.Component {
         this.props.facebookLogin();
         
         // temp method to remove stored token
-        //AsyncStorage.removeItem('fb_token');
+        // AsyncStorage.removeItem('fb_token');
         
         this.onAuthComplete(this.props);
     }
@@ -30,10 +31,20 @@ class AuthScreen extends React.Component {
     
     render() {
         return (
-            <View />
+            <View style={styles.container}>
+                <ActivityIndicator size="large" />
+            </View>
         );
     }
 }
+
+const styles = {
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+};
 
 const mapStateToProps = ({ auth }) => {
     return {
