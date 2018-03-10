@@ -33,7 +33,12 @@ const MainNavigator = TabNavigator({
         }),
     },
 }, {
+    // this option will prevent to render all screens at the same time
+    lazy: true,
     tabBarPosition: 'bottom',
+    navigationOptions: {
+        tabBarVisible: false,
+    },
 });
 
 class App extends React.Component {

@@ -13,7 +13,7 @@ import {
 const doFacebookLogin = async (dispatch) => {
     let { type, token } = await Facebook.logInWithReadPermissionsAsync(
         FB_APP_ID,
-        permissions: [ 'public_profile' ],
+        { permissions: [ 'public_profile' ] },
     );
     
     if (type === 'cancel') {
