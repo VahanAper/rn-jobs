@@ -3,12 +3,17 @@ import {
     View,
     Text,
 } from 'react-native';
+import {
+    MapView,
+} from 'expo';
 
 class MapScreen extends React.Component {
     render() {
         return (
-            <View>
-                <Text>MapScreen</Text>
+            <View style={{ flex: 1 }}>
+                <MapView
+                    style={{ flex: 1 }}
+                />
             </View>
         );
     }
