@@ -16,7 +16,7 @@ class AuthScreen extends React.Component {
         // temp method to remove stored token
         // AsyncStorage.removeItem('fb_token');
         
-        this.onAuthComplete(this.props);
+        // this.onAuthComplete(this.props);
     }
     
     componentWillReceiveProps(nextProps) {
