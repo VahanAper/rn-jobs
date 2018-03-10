@@ -4,6 +4,7 @@ import {
     TabNavigator,
     StackNavigator,
 } from 'react-navigation';
+import { Provider } from 'react-redux';
 
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
@@ -11,6 +12,8 @@ import MapScreen from './screens/MapScreen';
 import DeckScreen from './screens/DeckScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
+
+import store from './store';
 
 const MainNavigator = TabNavigator({
     welcome: { screen: WelcomeScreen },
@@ -36,7 +39,9 @@ const MainNavigator = TabNavigator({
 class App extends React.Component {
     render() {
         return (
-            <MainNavigator />
+            <Provider store={store}>
+                <MainNavigator />
+            </Provider>
         );  
     }
 }
