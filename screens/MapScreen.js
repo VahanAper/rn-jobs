@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     View,
-    Text,
+    ActivityIndicator,
 } from 'react-native';
 import {
     MapView,
@@ -15,9 +15,27 @@ class MapScreen extends React.Component {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
         },
+        mapLoaded: false,
+    }
+    
+    componentDidMount() {
+        this.setState({ mapLoaded: true });
     }
     
     render() {
+        if (!this.state.mapLoaded) {
+            return (
+                <View
+                    style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                    }}
+                >
+                    <ActivityIndicator size="large" />
+                </View>
+            );
+        }
+        
         return (
             <View style={{ flex: 1 }}>
                 <MapView
