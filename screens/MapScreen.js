@@ -22,6 +22,10 @@ class MapScreen extends React.Component {
         this.setState({ mapLoaded: true });
     }
     
+    onRegionChangeComplete = (region) => {
+        this.setState({ region });
+    }
+    
     render() {
         if (!this.state.mapLoaded) {
             return (
@@ -41,6 +45,7 @@ class MapScreen extends React.Component {
                 <MapView
                     style={{ flex: 1 }}
                     region={this.state.region}
+                    onRegionChangeComplete={this.onRegionChangeComplete}
                 />
             </View>
         );
