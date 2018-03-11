@@ -46,8 +46,8 @@ class ReviewScreen extends React.Component {
                 longitude: job.longitude,
                 latitude: job.latitude,
                 // these props specifies zoom level
-                longitudeDelta: 0.045,
-                latitudeDelta: 0.02,
+                longitudeDelta: 0.005,
+                latitudeDelta: 0.005,
             };
             
             return (
@@ -62,7 +62,11 @@ class ReviewScreen extends React.Component {
                                 style={{ flex: 1 }}
                                 scrollEnabled={false}
                                 initialRegion={initialRegion}
-                            />
+                            >
+                                <MapView.Marker
+                                    coordinate={initialRegion}
+                                />
+                            </MapView>
                         </View>
                         
                         <View style={styles.detailWrapper}>
