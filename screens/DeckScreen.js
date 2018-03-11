@@ -28,7 +28,8 @@ class DeckScreen extends React.Component {
             // these props specifies zoom level
             longitudeDelta: 0.045,
             latitudeDelta: 0.02,
-        }
+        };
+        
         return (
             <Card title={job.jobtitle}>
                 <View style={{ height: 200 }}>
@@ -62,6 +63,7 @@ class DeckScreen extends React.Component {
         return (
             <View>
                 <Swipe
+                    keyProp="jobkey"
                     data={this.props.jobs}
                     renderCard={this.renderCard}
                     renderNoMoreCards={this.renderNoMoreCards}

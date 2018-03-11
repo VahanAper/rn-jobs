@@ -16,6 +16,7 @@ const RIGHT = "RIGHT";
 
 class Swipe extends React.Component {
     static defaultProps = {
+        keyProp: 'id',
         onSwipeLeft: () => {},
         onSwipeRight: () => {},
     }
@@ -131,7 +132,7 @@ class Swipe extends React.Component {
     }
     
     renderCards = () => {
-        const { data } = this.props;
+        const { data, keyProp } = this.props;
         const { currentCardIndex } = this.state;
         
         if (currentCardIndex >= data.length) {
@@ -152,7 +153,7 @@ class Swipe extends React.Component {
                             styles.cardStyle,
                             { zIndex: 2 },
                         ]}
-                        key={item.id}
+                        key={item[keyProp]}
                     >
                         {this.props.renderCard(item)}
                     </Animated.View>
@@ -161,7 +162,7 @@ class Swipe extends React.Component {
             
             return (
                 <Animated.View
-                    key={item.id}
+                    key={item[keyProp]}
                     style={[
                         styles.cardStyle,
                         { top: 10 * (index - currentCardIndex) }
