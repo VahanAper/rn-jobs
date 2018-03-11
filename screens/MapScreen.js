@@ -35,7 +35,10 @@ class MapScreen extends React.Component {
     }
     
     searchForJobs = () => {
-        this.props.fetchJobs(this.state.region);
+        this.props.fetchJobs(
+            this.state.region,
+            () => this.props.navigation.navigate('deck')
+        );
     }
     
     render() {
