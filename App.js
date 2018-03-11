@@ -31,6 +31,8 @@ const MainNavigator = TabNavigator({
         }, {
             // this option will prevent to render all screens at the same time
             lazy: true,
+            // this option prevents navigation swiping on Android
+            swipeEnabled: false,
             tabBarPosition: 'bottom',
             tabBarOptions: {
                 labelStyle: {
