@@ -10,6 +10,7 @@ import {
     MapView,
 } from 'expo';
 import {
+    Icon,
     Card,
     Button,
 } from 'react-native-elements';
@@ -21,6 +22,17 @@ import {
 } from '../actions';
 
 class DeckScreen extends React.Component {
+    static navigationOptions = () => ({
+        title: 'Jobs',
+        tabBarIcon: ({ tintColor }) => (
+            <Icon
+                size={30}
+                color={tintColor}
+                name="description"
+            />
+        ),
+    });
+    
     clearSnippetText = (snippet) => {
         return snippet.replace(/<b>/g, '').replace(/<\/b>/g, '');
     }

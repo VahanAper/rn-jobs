@@ -4,6 +4,7 @@ import {
     ActivityIndicator,
 } from 'react-native';
 import {
+    Icon,
     Button,
 } from 'react-native-elements';
 import {
@@ -16,6 +17,17 @@ import {
 import { fetchJobs } from '../actions';
 
 class MapScreen extends React.Component {
+    static navigationOptions = () => ({
+        title: 'Map',
+        tabBarIcon: ({ tintColor }) => (
+            <Icon
+                size={30}
+                color={tintColor}
+                name="my-location"
+            />
+        ),
+    });
+    
     state = {
         region: {
             latitude: 37.78825,

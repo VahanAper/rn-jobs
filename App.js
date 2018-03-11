@@ -29,7 +29,14 @@ const MainNavigator = TabNavigator({
                 }),
             },
         }, {
+            // this option will prevent to render all screens at the same time
+            lazy: true,
             tabBarPosition: 'bottom',
+            tabBarOptions: {
+                labelStyle: {
+                    fontSize: 12,
+                },
+            },
         }),
     },
 }, {

@@ -6,6 +6,7 @@ import {
     ScrollView,
 } from 'react-native';
 import {
+    Icon,
     Card,
     Button,
 } from 'react-native-elements';
@@ -18,7 +19,8 @@ import {
 
 class ReviewScreen extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-        headerTitle: 'Review Jobs',
+        title: 'Review',
+        headerTitle: 'Liked Jobs',
         headerRight: (
             <Button
                 title="Settings"
@@ -29,6 +31,13 @@ class ReviewScreen extends React.Component {
                 onPress={() => navigation.navigate('settings')}
             />
         ),
+        tabBarIcon: ({ tintColor }) => (
+            <Icon
+                size={30}
+                name="favorite"
+                color={tintColor}
+            />
+        )
     });
     
     renderLikedJobs = () => {
