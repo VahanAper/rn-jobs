@@ -27,10 +27,14 @@ class SettingsScreen extends React.Component {
         )
     });
     
-    resetToken = async () => {
+    resetFacebookToken = async () => {
         let result = await AsyncStorage.removeItem('fb_token');
         
         this.props.navigation.navigate('welcome');
+    }
+    
+    resetPushToken = async () => {
+        let result = await AsyncStorage.removeItem('push_token');
     }
     
     render() {
@@ -38,19 +42,27 @@ class SettingsScreen extends React.Component {
             <View>
                 <Button
                     large
-                    title="Reset FB token"
+                    title="Reset FB Token"
                     backgroundColor="#F44336"
-                    onPress={this.resetToken}
                     buttonStyle={{ marginTop: 10 }}
                     icon={{ name: 'delete-forever' }}
+                    onPress={this.resetFacebookToken}
                 />
                 <Button
                     large
-                    title="Reset liked jobs"
+                    title="Reset Liked Jobs"
                     backgroundColor="#F44336"
                     buttonStyle={{ marginTop: 10 }}
                     icon={{ name: 'delete-forever' }}
                     onPress={this.props.clearLikedJobs}
+                />
+                <Button
+                    large
+                    title="Reset Push Token"
+                    backgroundColor="#F44336"
+                    onPress={this.resetPushToken}
+                    buttonStyle={{ marginTop: 10 }}
+                    icon={{ name: 'delete-forever' }}
                 />
             </View>
         );
