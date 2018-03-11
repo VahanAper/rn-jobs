@@ -7,11 +7,15 @@ import {
     connect,
 } from 'react-redux';
 
+import Swipe from '../components/Swipe';
+
 class DeckScreen extends React.Component {
     render() {
         return (
             <View>
-                <Text>DeckScreen</Text>
+                <Swipe
+                    data={this.props.jobs}
+                />
             </View>
         );
     }
