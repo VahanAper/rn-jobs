@@ -33,8 +33,6 @@ export const fetchJobs = (region) => async (dispatch) => {
         
         let { data } = await axios.get(url);
         
-        console.log('data ;::: ', data);
-        
         dispatch({
             type: FETCH_JOBS,
             payload: data,
