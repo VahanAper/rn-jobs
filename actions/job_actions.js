@@ -3,6 +3,7 @@ import axios from 'axios';
 import reverseGeocode from 'latlng-to-zip';
 
 import {
+    LIKE_JOB,
     FETCH_JOBS,
 } from './types';
 
@@ -42,4 +43,11 @@ export const fetchJobs = (region, callback) => async (dispatch) => {
     } catch (e) {
         console.error(e);
     }
+};
+
+export const likeJob = (job) => {
+    return {
+        type: LIKE_JOB,
+        payload: job,
+    };
 };

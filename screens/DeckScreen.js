@@ -16,6 +16,10 @@ import {
 
 import Swipe from '../components/Swipe';
 
+import {
+    likeJob,
+} from '../actions';
+
 class DeckScreen extends React.Component {
     clearSnippetText = (snippet) => {
         return snippet.replace(/<b>/g, '').replace(/<\/b>/g, '');
@@ -69,6 +73,7 @@ class DeckScreen extends React.Component {
                     keyProp="jobkey"
                     data={this.props.jobs}
                     renderCard={this.renderCard}
+                    onSwipeRight={this.props.likeJob}
                     renderNoMoreCards={this.renderNoMoreCards}
                 />
             </View>
@@ -89,4 +94,4 @@ const mapStateToProps = ({ jobs }) => ({
     jobs: jobs.results,
 });
 
-export default connect(mapStateToProps)(DeckScreen);
+export default connect(mapStateToProps, { likeJob })(DeckScreen);
