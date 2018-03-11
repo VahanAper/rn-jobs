@@ -21,7 +21,7 @@ export default (state = [], action) => {
             return action.payload;
             
         case REHYDRATE:
-            return action.payload.likedJobs || [];
+            return (action.payload && action.payload.likedJobs) || [];
 
         default:
             return state;
