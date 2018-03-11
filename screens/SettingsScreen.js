@@ -5,6 +5,7 @@ import {
     AsyncStorage,
 } from 'react-native';
 import {
+    Icon,
     Button,
 } from 'react-native-elements';
 import {
@@ -14,6 +15,18 @@ import {
 import { clearLikedJobs } from '../actions';
 
 class SettingsScreen extends React.Component {
+    static navigationOptions = ({ navigation }) => ({
+        title: 'Review',
+        headerTitle: '',
+        tabBarIcon: ({ tintColor }) => (
+            <Icon
+                size={30}
+                name="favorite"
+                color={tintColor}
+            />
+        )
+    });
+    
     resetToken = async () => {
         let result = await AsyncStorage.removeItem('fb_token');
         
