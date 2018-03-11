@@ -42,7 +42,10 @@ class ReviewScreen extends React.Component {
             };
             
             return (
-                <Card key={job.jobkey}>
+                <Card
+                    key={job.jobkey}
+                    title={job.jobtitle}
+                >
                     <View style={{ height: 200 }}>
                         <View style={{ flex: 1 }}>
                             <MapView
