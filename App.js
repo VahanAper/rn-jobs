@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
+    TabBarBottom,
     TabNavigator,
     StackNavigator,
 } from 'react-navigation';
@@ -34,6 +35,8 @@ const MainNavigator = TabNavigator({
             // this option prevents navigation swiping on Android
             swipeEnabled: false,
             tabBarPosition: 'bottom',
+            // this prop allows the Icons to be shown on android
+            tabBarComponent: TabBarBottom,
             tabBarOptions: {
                 labelStyle: {
                     fontSize: 12,
