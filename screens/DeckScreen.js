@@ -31,7 +31,10 @@ class DeckScreen extends React.Component {
         };
         
         return (
-            <Card title={job.jobtitle}>
+            <Card
+                title={job.jobtitle}
+                titleNumberOfLines={1}
+            >
                 <View style={{ height: 200 }}>
                     <MapView
                         cacheEnabled 
@@ -46,7 +49,7 @@ class DeckScreen extends React.Component {
                     <Text>{job.formattedRelativeTime}</Text>
                 </View>
                 
-                <Text>
+                <Text style={{ height: 50 }}>
                     {this.clearSnippetText(job.snippet)}
                 </Text>
             </Card>
@@ -61,7 +64,7 @@ class DeckScreen extends React.Component {
     
     render() {
         return (
-            <View>
+            <View style={{ marginTop: 10 }}>
                 <Swipe
                     keyProp="jobkey"
                     data={this.props.jobs}
