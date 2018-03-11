@@ -2,6 +2,7 @@ import React from 'react';
 import {
     View,
     Text,
+    Linking,
     ScrollView,
 } from 'react-native';
 import {
@@ -36,6 +37,12 @@ class ReviewScreen extends React.Component {
                             <Text style={styles.italics}>{job.company}</Text>
                             <Text style={styles.italics}>{job.formattedRelativeTime}</Text>
                         </View>
+                        
+                        <Button
+                            title="Apply now"
+                            backgroundColor="#03A9F4"
+                            onPress={() => Linking.openURL(job.url)}
+                        />
                     </View>
                 </Card>
             );
