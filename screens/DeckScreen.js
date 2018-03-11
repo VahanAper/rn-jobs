@@ -3,6 +3,9 @@ import {
     View,
     Text,
 } from 'react-native';
+import {
+    connect,
+} from 'react-redux';
 
 class DeckScreen extends React.Component {
     render() {
@@ -14,4 +17,8 @@ class DeckScreen extends React.Component {
     }
 }
 
-export default DeckScreen;
+const mapStateToProps = ({ jobs }) => ({
+    jobs: jobs.results,
+});
+
+export default connect(mapStateToProps)(DeckScreen);
