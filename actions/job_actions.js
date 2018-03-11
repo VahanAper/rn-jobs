@@ -5,6 +5,7 @@ import reverseGeocode from 'latlng-to-zip';
 import {
     LIKE_JOB,
     FETCH_JOBS,
+    CLEAR_LIKED_JOBS,
 } from './types';
 
 const JOB_QUERY_PARAMS = {
@@ -50,4 +51,11 @@ export const likeJob = (job) => {
         type: LIKE_JOB,
         payload: job,
     };
+};
+
+export const clearLikedJobs = () => {
+    return {
+        type: CLEAR_LIKED_JOBS,
+        payload: [],
+    }
 };

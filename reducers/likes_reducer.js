@@ -2,6 +2,7 @@ import uniqBy from 'lodash/uniqBy';
 
 import {
     LIKE_JOB,
+    CLEAR_LIKED_JOBS,
 } from '../actions/types';
 
 export default (state = [], action) => {
@@ -12,6 +13,9 @@ export default (state = [], action) => {
                 ...state,
                 action.payload,
             ], 'jobkey');
+            
+        case CLEAR_LIKED_JOBS:
+            return action.payload;
 
         default:
             return state;

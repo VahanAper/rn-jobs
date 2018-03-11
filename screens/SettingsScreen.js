@@ -7,6 +7,11 @@ import {
 import {
     Button,
 } from 'react-native-elements';
+import {
+    connect,
+} from 'react-redux';
+
+import { clearLikedJobs } from '../actions';
 
 class SettingsScreen extends React.Component {
     resetToken = async () => {
@@ -18,14 +23,25 @@ class SettingsScreen extends React.Component {
     render() {
         return (
             <View>
-                <Text>SettingsScreen</Text>
                 <Button
+                    large
                     title="Reset FB token"
+                    backgroundColor="#F44336"
                     onPress={this.resetToken}
+                    buttonStyle={{ marginTop: 10 }}
+                    icon={{ name: 'delete-forever' }}
+                />
+                <Button
+                    large
+                    title="Reset liked jobs"
+                    backgroundColor="#F44336"
+                    buttonStyle={{ marginTop: 10 }}
+                    icon={{ name: 'delete-forever' }}
+                    onPress={this.props.clearLikedJobs}
                 />
             </View>
         );
     }
 }
 
-export default SettingsScreen;
+export default connect(null, { clearLikedJobs })(SettingsScreen);
