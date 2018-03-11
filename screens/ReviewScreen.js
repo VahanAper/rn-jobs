@@ -12,6 +12,9 @@ import {
 import {
     connect,
 } from 'react-redux';
+import {
+    MapView,
+} from 'expo';
 
 class ReviewScreen extends React.Component {
     static navigationOptions = ({ navigation }) => ({
@@ -30,9 +33,26 @@ class ReviewScreen extends React.Component {
     
     renderLikedJobs = () => {
         return this.props.likedJobs.map((job) => {
+            const initialRegion = {
+                longitude: job.longitude,
+                latitude: job.latitude,
+                // these props specifies zoom level
+                longitudeDelta: 0.045,
+                latitudeDelta: 0.02,
+            };
+            
             return (
                 <Card key={job.jobkey}>
                     <View style={{ height: 200 }}>
+                        <View style={{ flex: 1 }}>
+                            <MapView
+                                cacheEnabled
+                                style={{ flex: 1 }}
+                                scrollEnabled={false}
+                                initialRegion={initialRegion}
+                            />
+                        </View>
+                        
                         <View style={styles.detailWrapper}>
                             <Text style={styles.italics}>{job.company}</Text>
                             <Text style={styles.italics}>{job.formattedRelativeTime}</Text>
